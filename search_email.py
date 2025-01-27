@@ -27,13 +27,11 @@ def main():
         messages = search_messages(headers, search_query)
 
         for index, mail_message in enumerate(messages):
-            print(f'Email {index + 1}')
             print('Subject:', mail_message['subject'])
             print('From:', mail_message['from']['emailAddress']['name'],
                   f"({mail_message['from']['emailAddress']['address']})")
             print('Received Data Time:', mail_message['receivedDateTime'])
             print('Body preview:', mail_message['bodyPreview'])
-            print('-' * 50)
 
             print('===========================================')
             print(extract_email_addresses_from_email(mail_message['bodyPreview']))

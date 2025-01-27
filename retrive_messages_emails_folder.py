@@ -39,7 +39,6 @@ def main():
                 sub_folder_id = sub_folder['id']
                 messages = get_messages(headers, sub_folder_id)
                 for message in messages:
-                    print(f'Sub folder name: {sub_folder["displayName"]}')
                     print('Subject:', message['subject'])
                     print('-' * 50)
 
