@@ -62,7 +62,7 @@ def get_messages(headers: dict[str, str], folder_id: int | None, top=5, max_resu
     return messages[:max_results]
 
 
-def search_messages(headers: dict[str, str], search_query: str, folder_id=None, fields='*', top=5,
+def search_messages(headers: dict[str, str], search_query: str, folder_id=None, fields='*', top=10,
                     max_results=20) -> list[...]:
     if folder_id is None:
         endpoint = f'{MS_GRAPH_BASE_URL}/users/{EMAIL}/messages'
@@ -96,3 +96,5 @@ def search_messages(headers: dict[str, str], search_query: str, folder_id=None, 
             }
 
     return messages[:max_results]
+
+
